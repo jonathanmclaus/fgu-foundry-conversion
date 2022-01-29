@@ -49,10 +49,6 @@
 #     "remindUsers": []
 # }
 
-# The ID of the FVTT settings entry where calendar notes are location.
-CAL_SETTINGS = "foundryvtt-simple-calendar.notes"
-
-
 # Standard library imports:
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser, FileType
 from functools import partial
@@ -65,8 +61,11 @@ from shutil import copyfile
 from xml.etree import ElementTree
 
 # Third-party imports:
-from toolz.functoolz import compose
 from boltons.dictutils import subdict
+from toolz.functoolz import compose
+
+# The ID of the FVTT settings entry where calendar notes are location.
+CAL_SETTINGS = "foundryvtt-simple-calendar.notes"
 
 
 def get_id():
@@ -186,6 +185,7 @@ def parse_args(args=None):
     # Parse and output arguments.
     return parser.parse_args(args)
 
+
 if __name__ == "__main__":
     # Parse the arguments.
     args = vars(parse_args())
@@ -246,4 +246,3 @@ if __name__ == "__main__":
 
     # Exit cleanly.
     exit()
-
